@@ -9,9 +9,14 @@
 	<artifactId>piercing-service-impl</artifactId>
 	<packaging>jar</packaging>
 	<name>piercing-service-impl</name>
+	
 
 	<dependencies>
-		
+		<dependency>
+			<groupId>com.piercing</groupId>
+			<artifactId>piercing-service</artifactId>
+			<version>${piercing.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

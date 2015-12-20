@@ -1,0 +1,14 @@
+db.jdbcUrl=jdbc:mysql://127.0.0.1:3306/chao?useUnicode=true&characterEncoding=utf8
+db.user=root
+db.password=
+db.driverClass=com.mysql.jdbc.Driver
+db.minPoolSize=10
+db.maxPoolSize=100
+db.maxIdleTime=3600
+db.acquireIncrement=3
+db.maxStatements=1000
+db.initialPoolSize=10
+db.idleConnectionTestPeriod=60
+db.acquireRetryAttempts=30
+db.breakAfterAcquireFailure=true
+db.testConnectionOnCheckout=false

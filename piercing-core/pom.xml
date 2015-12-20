@@ -29,9 +29,6 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<!-- Test -->
 		<junit.version>4.11</junit.version>
-		<!-- validation-api -->
-		<validation-api.version>1.1.0.Final</validation-api.version>
-
 		<!-- 连接池子 -->
 		<c3p0.version>0.9.1.2</c3p0.version>
 		<mysql.version>5.1.34</mysql.version>
@@ -48,6 +45,8 @@
 
 		<!-- pinyin -->
 		<pinyin4j.version>2.5.0</pinyin4j.version>
+		<flash.version>0.0.1-SNAPSHOT</flash.version>
+		<piercing.version>0.0.1-SNAPSHOT</piercing.version>
 	</properties>
 
 	<modules>
@@ -84,10 +83,10 @@
 			<artifactId>jackson-databind</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
-		<!-- commons -->
+		<!-- base-exception -->
 		<dependency>
 			<groupId>com.flash</groupId>
-			<artifactId>flash-commons</artifactId>
+			<artifactId>flash-exception</artifactId>
 			<version>${flash.version}</version>
 		</dependency>
 	</dependencies>
