@@ -10,20 +10,27 @@
 	<name>piercing-web</name>
 	<packaging>war</packaging>
 	<properties>
-		
+
 	</properties>
 	<dependencies>
+		
+		<!-- servlet -->
 		<dependency>
-			<groupId>com.flash</groupId>
-			<artifactId>flash-base-web</artifactId>
-			<version>${flash.version}</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.version}</version>
+		</dependency>
+		<!-- Spring MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring-framework.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.piercing</groupId>
 			<artifactId>piercing-service-impl</artifactId>
 			<version>${piercing.version}</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>

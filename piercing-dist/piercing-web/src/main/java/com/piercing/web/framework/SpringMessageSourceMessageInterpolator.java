@@ -1,4 +1,4 @@
-package com.pirecing.web.framework;
+package com.piercing.web.framework;
 
 import java.util.Locale;
 

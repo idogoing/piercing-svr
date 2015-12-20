@@ -6,7 +6,7 @@
 		<artifactId>piercing-core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<artifactId>piercing-service</artifactId>
 	<name>piercing-service</name>
 
@@ -24,6 +24,18 @@
 			<groupId>com.flash</groupId>
 			<artifactId>flash-base-tool</artifactId>
 			<version>${flash-base-tool.version}</version>
+		</dependency>
+		
+		<!-- validate -->
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>${validation-api.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
 		</dependency>
 		
 		<!-- Spring -->
@@ -88,12 +100,6 @@
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper</artifactId>
 			<version>${pagehelper.version}</version>
-		</dependency>
-		<!-- flash redis -->
-		<dependency>
-			<groupId>com.flash</groupId>
-			<artifactId>flash-redis</artifactId>
-			<version>${flash.version}</version>
 		</dependency>
 		<!-- 2.3 连接池 -->
 		<dependency>

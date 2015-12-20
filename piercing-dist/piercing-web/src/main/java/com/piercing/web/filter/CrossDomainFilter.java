@@ -1,4 +1,4 @@
-package com.pirecing.web.filter;
+package com.piercing.web.filter;
 
 import java.io.IOException;
 

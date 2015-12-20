@@ -1,4 +1,4 @@
-package com.pirecing.web.framework;
+package com.piercing.web.framework;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.flash.exception.ServiceException;
 import com.flash.exception.constant.ExceptionConstant;
-import com.flash.web.base.response.BaseResponse;
+import com.piercing.web.response.BaseResponse;
 
 @Controller
 public class WebApiBaseController {

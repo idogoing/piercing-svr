@@ -55,4 +55,7 @@
         <property name="defaultEncoding" value="UTF-8"/>  
         <property name="cacheSeconds" value="60"/>  
     </bean>
+    
+    <!-- 导入其他的内容 -->
+	<import resource="../application-redis.xml"/>
 </beans>

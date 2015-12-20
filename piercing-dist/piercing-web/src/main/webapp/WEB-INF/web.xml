@@ -54,7 +54,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	<!-- 跨域请求 -->
 	<filter>
 		<filter-name>CrossDomainFilter</filter-name>
-		<filter-class>com.pirecing.web.filter.CrossDomainFilter</filter-class>
+		<filter-class>com.piercing.web.filter.CrossDomainFilter</filter-class>
 		<init-param>
 			<param-name>domains</param-name>
 			<param-value>*</param-value>

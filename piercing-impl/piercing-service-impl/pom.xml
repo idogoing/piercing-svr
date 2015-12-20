@@ -10,12 +10,23 @@
 	<packaging>jar</packaging>
 	<name>piercing-service-impl</name>
 	
+	<properties>
+		<flash-redis.version>0.0.1-SNAPSHOT</flash-redis.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>com.piercing</groupId>
 			<artifactId>piercing-service</artifactId>
 			<version>${piercing.version}</version>
+		</dependency>
+		
+		
+		<!-- flash redis -->
+		<dependency>
+			<groupId>com.flash</groupId>
+			<artifactId>flash-redis</artifactId>
+			<version>${flash-redis.version}</version>
 		</dependency>
 	</dependencies>
 
