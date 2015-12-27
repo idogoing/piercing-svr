@@ -13,7 +13,7 @@ import com.piercing.web.response.BaseResponse;
 public class CheckController extends WebApiBaseController {
 	
 	@RequestMapping(value = "/{appid}/{secret}")
-	public @ResponseBody BaseResponse<?> onsaleProducts(@PathVariable String appId, @PathVariable String secret){
+	public @ResponseBody BaseResponse<?> onsaleProducts(@PathVariable(value = "appid") String appId, @PathVariable(value = "secret") String secret){
 		
 		return BaseResponse.success();
 	}

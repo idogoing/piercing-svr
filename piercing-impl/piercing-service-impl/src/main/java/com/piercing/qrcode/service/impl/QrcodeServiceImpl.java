@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.flash.code.CheckResult;
 import com.flash.code.template.CouponTemplate;
 import com.flash.code.template.MeetingTemplate;
+import com.flash.code.template.ShopGiftTemplate;
 import com.flash.commons.http.HttpClientUtils;
 import com.flash.commons.json.JsonHelper;
 import com.flash.commons.md5.MD5Utils;
@@ -36,7 +37,7 @@ public class QrcodeServiceImpl implements QrcodeService{
 	@Override
 	public CheckResult<?> checkOneCode(QrcodeCheckDto checkQrcodeDto) throws ServiceException {
 		//进行sign校验
-//		this.checkSign(checkQrcodeDto);
+		this.checkSign(checkQrcodeDto);
 		LOGGER.debug("核销请求通过规则校验，参数均正确");
 		//获取平台信息、终端信息
 		TerminalDetail terminalDetail = this.terminalSerivce.judgePlatformByCodeAndSecret(checkQrcodeDto.getCode(),checkQrcodeDto.getAppid(),checkQrcodeDto.getSecret());
@@ -81,7 +82,7 @@ public class QrcodeServiceImpl implements QrcodeService{
 			}
 			//TODO check log
 			LOGGER.debug("核销请求发送成功，返回结果:{},耗时[{}秒]",checkResult,System.currentTimeMillis() - checkStart);
-			CheckResult slapdashCheckResult = JsonHelper.transJsonStringToObj(checkResult, CheckResult.class);
+			CheckResult<?> slapdashCheckResult = JsonHelper.transJsonStringToObj(checkResult, CheckResult.class);
 			String checkMsg = slapdashCheckResult.getMsg();
 			int checkStatus = slapdashCheckResult.getCode();
 			int type = slapdashCheckResult.getType();
@@ -101,6 +102,10 @@ public class QrcodeServiceImpl implements QrcodeService{
 				}else if(type == QrcodeConstant.CODE_TYPE_MOVIE_TICKET){//电影票
 					LOGGER.info("未知的二维码");
 					throw new QrcodeServiceException(QrcodeServiceExceptionCode.ERROR_QRCODE_TYPE);
+				}else if(type == QrcodeConstant.CODE_TYPE_SHOP_GIFT){
+					CheckResult<ShopGiftTemplate> result = JsonHelper.transJsonStringToObj(checkResult, CheckResult.class,ShopGiftTemplate.class);
+					LOGGER.info("[核销成功]第三方平台返回信息, msg={}, 类型:礼品",checkMsg);
+					return result;
 				}else{
 					LOGGER.info("未知的二维码");
 					throw new QrcodeServiceException(QrcodeServiceExceptionCode.ERROR_QRCODE_TYPE);

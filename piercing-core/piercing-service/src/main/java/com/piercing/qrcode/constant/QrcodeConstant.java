@@ -10,4 +10,6 @@ public class QrcodeConstant {
 	public static final int CODE_TYPE_GROUP_BUY_COUPON = 4;
 	public static final int CODE_TYPE_DEFAULT_ON_SELL_COUPON = 1;//优惠券
 	
+	public static final int CODE_TYPE_SHOP_GIFT = 5;//线下礼品
+	
 }
